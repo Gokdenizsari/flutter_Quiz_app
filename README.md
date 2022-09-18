@@ -1,16 +1,18 @@
-# flutter_quiz_app
+# App Quiz en utilisant le flutter
 
-A new Flutter project.
+## [Regardez-le sur YouTube] (https://www.youtube.com/channel/UCpFAc6I0Rr8FrIEmwdMyg0w)
 
-## Getting Started
+**Forfaits que nous utilisons :**
 
-This project is a starting point for a Flutter application.
+- websafe_svg : [lien](https://pub.dev/packages/websafe_svg)
+- GetX : [lien](https://pub.dev/packages/get)
 
-A few resources to get you started if this is your first Flutter project:
+Notre application de quiz contient un total de trois écrans, l'écran d'accueil où un utilisateur soumet son nom à l'écran principal appelé écran de questions. Chaque question a 4 options une fois que l'utilisateur clique sur l'option si la réponse est correcte puis elle devient verte sinon rouge. À l'écran de score final où vous pouvez vérifier votre score.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Il s'agit d'une application de quiz fonctionnelle complète qui fonctionne à la fois sur les appareils Android et iOS. Pour la gestion des états, nous utilisons le package getX.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Interface utilisateur finale de l'application Quiz
+
+<!-- ![Aperçu](/gif.gif) -->
+
+![Interface utilisateur de l'application](/ui.png)
