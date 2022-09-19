@@ -14,7 +14,9 @@ class MainPart extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Spacer(flex: 2,),
+              Spacer(
+                flex: 2,
+              ),
               Text(
                 "Let's Play Quiz",
                 style: Theme.of(context)
@@ -23,8 +25,9 @@ class MainPart extends StatelessWidget {
                     .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               ),
               Text("Enter your informations below"),
+              Spacer(),
               TextField(
-                decoration: InputDecoration(
+                decoration: InputDecoration(  
                   hintText: "Enter the full name",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -33,9 +36,7 @@ class MainPart extends StatelessWidget {
               ),
               Spacer(),
               InkWell(
-                onTap: (){
-
-                },
+                onTap: () {},
                 child: Container(
                   width: double.infinity,
                   alignment: Alignment.center,
@@ -53,7 +54,9 @@ class MainPart extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(flex: 2,),
+              Spacer(
+                flex: 2,
+              ),
             ],
           ),
         ))
