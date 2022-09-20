@@ -13,9 +13,9 @@ class Progress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 40,
+      height: 35,
       decoration: BoxDecoration(
-        border: Border.all(width: 4),
+        border: Border.all(width: 3),
         borderRadius: BorderRadius.circular(50),
       ),
       child: GetBuilder<QuestionController>(
@@ -36,9 +36,11 @@ class Progress extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: gDefaultPadding / 2),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("${(controller.animation.value).round()} sec"),
-                    WebsafeSvg.asset("assets/icons/clock.svg"),
+                    Text("${(controller.animation.value * 60).round()} sec"),
+                    /* WebsafeSvg.asset("assets/icons/clock.svg",
+                        fit: BoxFit.fill),*/
                   ],
                 ),
               ))
