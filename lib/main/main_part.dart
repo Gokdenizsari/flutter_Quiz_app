@@ -27,7 +27,7 @@ class MainPart extends StatelessWidget {
               Text("Enter your informations below"),
               Spacer(),
               TextField(
-                decoration: InputDecoration(  
+                decoration: InputDecoration(
                   hintText: "Enter the full name",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
