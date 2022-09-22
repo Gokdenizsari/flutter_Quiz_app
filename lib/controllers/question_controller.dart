@@ -1,6 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
-import 'package:quiz_app/model/questions.dart';
+import 'package:quiz_app/questions/questions.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -9,21 +9,13 @@ class QuestionController extends GetxController
 
   Animation get animation => this._animation;
 
-  List<Question> _questions = sample_data
-      .map((question) => Question(
-          id: question["id"],
-          question: question["question"],
-          options: question["option"],
-          answer: question["answe_index"]))
-      .toList();
-
-  List<Question> get question => this._questions;
+  List<QuestionModel> get question => this.question;
 
   @override
   void onInit() {
     _animationController =
         AnimationController(duration: Duration(seconds: 60), vsync: this);
-    _animation = Tween(begin: 0, end: 1).animate(_animationController)
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController)
       ..addListener(() {
         update();
       });
