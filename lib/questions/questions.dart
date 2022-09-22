@@ -1,35 +1,75 @@
-class Question {
-  final int id, answer;
-  final String question;
-  final List<String> options;
-
-  Question({this.id, this.question, this.answer, this.options});
+class QuestionModel {
+  String question;
+  Map<String, bool> answers;
+  QuestionModel(this.question, this.answers);
 }
 
-const List sample_data = [
-  {
-    "id": 1,
-    "question":
-        "Flutter is an open-source UI software development kit created by ______",
-    "options": ['Apple', 'Google', 'Facebook', 'Microsoft'],
-    "answer_index": 1,
-  },
-  {
-    "id": 2,
-    "question": "When google release Flutter.",
-    "options": ['Jun 2017', 'Jun 2017', 'May 2017', 'May 2018'],
-    "answer_index": 2,
-  },
-  {
-    "id": 3,
-    "question": "A memory location that holds a single letter or number.",
-    "options": ['Double', 'Int', 'Char', 'Word'],
-    "answer_index": 2,
-  },
-  {
-    "id": 4,
-    "question": "What command do you use to output data to the screen?",
-    "options": ['Cin', 'Count>>', 'Cout', 'Output>>'],
-    "answer_index": 2,
-  },
+List<QuestionModel> questions = [
+  QuestionModel(
+    "How many planets are there in the solar system?",
+    {
+      "7": false,
+      "11": false,
+      "8": true,
+      "9": false,
+    },
+  ),
+  QuestionModel("Who is the first person to go into space?", {
+    "Nie Haysin": false,
+    "Valentina Tereskova": false,
+    "Neil Armstrong": false,
+    " Yuri Gagarin": true,
+  }),
+  QuestionModel("Who is the longest living person ?", {
+    "Lucile Randon  ": false,
+    "Li Ching-Yuen ": true,
+    "Jeanne Louise Calment ": false,
+    "Kane Tanaka": false,
+  }),
+  QuestionModel("How many moons does Mars have ?", {
+    "1": false,
+    "2": false,
+    "4": true,
+    "8": false,
+  }),
+  QuestionModel("Who discovered gravity?", {
+    "Isaac Newton": true,
+    "Nikola Tesla": false,
+    "Albert Einstien": false,
+    "Pisagor": false,
+  }),
+  QuestionModel("How many satellites are in space ?", {
+    "3.850": false,
+    "4.750": false,
+    "6.500": true,
+    "5.452": false,
+  }),
+  QuestionModel(
+      "How long does it take to reach the moon? ?", {
+    "2 days": false,
+    "3 days": false,
+    "8 days": false,
+    "5 days": true,
+  }),
+  QuestionModel("World Is the ___ planet from the sun ?", {
+    "Secon": false,
+    "Third": true,
+    "Fourth": false,
+    "Sixth": false,
+  }),
+  QuestionModel(
+      "Where did Orville and Wilbur Wright build their first flying airplane ?",
+      {
+        "Paris, France": false,
+        "Boston, Massachusetts": false,
+        "Kitty Hawk, North Carolina": true,
+        "Tokyou, Japan": false,
+      }),
+  QuestionModel(
+      "The First astronuts to travel to space came from which country ?", {
+    "United States": false,
+    "Soviet Union (now Russia)": true,
+    "China": false,
+    "Rocketonia": false,
+  }),
 ];
