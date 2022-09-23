@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/components/progress.dart';
+import 'package:quiz_app/components/score.dart';
 import 'package:quiz_app/main/constants_part/constants.dart';
 import 'package:quiz_app/questions/questions.dart';
 
@@ -32,6 +33,7 @@ class _BodyState extends State<Body> {
         child: Padding(
           padding: EdgeInsets.all(1),
           child: PageView.builder(
+            physics: NeverScrollableScrollPhysics(),
             controller: _controller,
             onPageChanged: (page) {
               setState(() {
@@ -118,14 +120,27 @@ class _BodyState extends State<Body> {
                   ),
                   OutlinedButton(
                       onPressed: isPressed
-                          ? () {
-                              _controller.nextPage(
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.easeInExpo);
-                            }
+                          ? index + 1 == questions.length
+                              ? () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ScoreScreen(Score)));
+                                }
+                              : () {
+                                  _controller.nextPage(
+                                      duration: Duration(milliseconds: 500),
+                                      curve: Curves.linear);
+                                  setState(() {
+                                    isPressed = false;
+                                  });
+                                }
                           : null,
                       child: Text(
-                        "Next",
+                        index + 1 == questions.length
+                            ? "See Result"
+                            : "Next Question",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
